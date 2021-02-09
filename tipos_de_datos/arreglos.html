@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array</h1>
+    <script>
+      const a = [];
+      console.log(a);
+      console.log(a.length);
+      const b = ["lunes", 3, ["hola", 2, 3]];
+      console.log(b);
+      // para mostrar un dato especifico se lo busca atraves de una "coordenada"
+      console.log(b[1]); //3
+      console.log(b[2][0]); //hola
+
+      const c = Array.of(1, 2, 3, 4, 5);
+      console.log(c);
+
+      const d = Array(100).fill("hola");
+      console.log(d); // mostrara 100 veces hola
+
+      // const e = new Array() - esta forma es vieja para declarar un array
+
+      const colores = ["blue", "red", "yellow"];
+      console.log(colores);
+
+      colores.push("black");
+      console.log(colores);
+
+      colores.pop();
+      console.log(colores); //quita el ultimo elemento
+
+      colores.forEach(function (elem, id) {
+        console.log(`<li class='${id}'>${elem}</li>`);
+        /*
+        result:
+          <li class='0'>blue</li>
+          <li class='1'>red</li>
+          <li class='2'>yellow</li>
+        */
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Objetos</h1>
+    <script>
+
+      /*
+        se puede inicializar un objeto con la propiedad new Object
+        pero esa forma vieja es poca utilizada
+      */
+
+      const myLife = {
+        nombre: "Alex",
+        apellido: "granados",
+        edad: 20,
+        pasatiempo: ["leer", "ajedrez", "programar >3"],
+        contacto: {
+          correo: "alexlds6@gmail.com",
+          telefono: 123321,
+          twitter: "@g1_alexander"
+        },
+        soltero: true,
+        saludar: function(){
+          console.log("hola :3");
+        },
+        saludar2: function(){
+          console.log(`hola, mi nombre es ${this.nombre} ${this.apellido}
+          y me puedes contactar en twitter como ${this.contacto.twitter}`);
+        }
+      }
+
+      console.log(myLife);
+      console.log(myLife.nombre);
+      console.log(myLife["apellido"]);
+      console.log(myLife.contacto.telefono);
+      console.log(myLife.pasatiempo[1]);
+
+      myLife.saludar()
+      myLife.saludar2()
+
+      // cosas utiles a considerar en los objetos
+
+      console.log(Object.keys(myLife)); //nombre de las propiedades
+      console.log(Object.values(myLife)); //nombre de los valores
+
+      console.log(myLife.hasOwnProperty("nombre"));//true
+      console.log(myLife.hasOwnProperty("jojo"));//false
+
+    </script>
+  </body>
+</html>

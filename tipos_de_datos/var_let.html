@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Variables let vs var</h1>
+
+    <script>
+      console.log("***********VAR*************");
+      var musica = "rock";
+      console.log(musica);
+      {
+        var musica = "pop";
+        console.log(musica);
+      }
+      console.log(musica);
+
+      console.log("***********LET*************");
+      let musica2 = "rock";
+      console.log(musica2);
+      {
+        let musica2 = "pop";
+        console.log(musica2);
+      }
+      console.log(musica2);
+
+      console.log("***********window*************");
+      console.log(window.musica); //pop
+      console.log(window.musica2); //undefined
+    </script>
+  </body>
+</html>

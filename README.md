@@ -1,0 +1,32 @@
+# Curso de Javascript
+
+![js](data:image/png;base64,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)
+
+## Apuntes del curso
+
+- [Link Notion][documentacion]
+
+---
+
+## Apuntes del docente
+
+- [documentacion][blog_jon] (parte de JS)
+
+---
+
+## curso gratuito de [Jon Mircha][twitter_jon]
+
+- [Link Youtube][youtube_jon] <br>
+- [Link Web site][web]
+
+
+<!-- Links -->
+[documentacion]: https://www.notion.so/g1alexander/Apuntes-de-Javascript-4cddeb38ef2141798b2129dfc71da14b
+
+[twitter_jon]: https://twitter.com/jonmircha
+
+[youtube_jon]: https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA
+
+[web]: https://aprendejavascript.org/
+
+[blog_jon]: https://jonmircha.com/blog

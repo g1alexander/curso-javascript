@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Variables const</h1>
+
+    <script>
+      console.log("***********CONST*************");
+      // const NUMBER // esto marca error
+      //alternativa
+      let number;
+      number = 9;
+      console.log(number);
+      console.log("***********CONST*************");
+
+      const PI = 3.1416;
+      console.log(PI); //3.1416 y asi se va a quedar el valor en todo el codigo
+      console.log("***********CONST*************");
+
+      const objeto = {
+        nombre: "alex",
+        edad: 20,
+      };
+      console.log(objeto); /*
+      {
+        nombre: "alex"
+        edad: 20
+      }
+      */
+      const array = [9, 2, 1, 3];
+      console.log(array); /*
+      [9,2,1,3]
+      */
+
+      objeto.correo = "alex@alex.com";
+      array.push(7);
+
+      console.log(objeto); /*
+      {
+        nombre: "alex",
+        edad: 20,
+        correo:alex@alex.com"
+      }
+      */
+      console.log(array); /*
+      [9,2,1,3,7]
+      */
+
+      /*
+        Nota: esto tambien lo puedes declarar con "let", pero, es mejor 
+        hacerlo con const*/
+    </script>
+  </body>
+</html>

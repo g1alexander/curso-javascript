@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>number</h1>
+    <script>
+      let a = 2
+      let b = new Number(7)
+      let c = 7.25
+      let d = "5.3"
+
+      console.log(a, b);
+      console.log(c.toFixed(1));
+      console.log(c.toPrecision(3))
+      console.log(parseInt(c));
+      console.log(parseFloat(c));
+      console.log(typeof c, typeof d);
+
+      console.log(a + b);
+      console.log(c + d);
+      console.log(c + parseFloat(d));
+
+      /*para evitarnos mucha confusion en la conversion de numeros es mas 
+      recomendable usar librerias que ya hacen el trabajo por nosotros */
+    
+    </script>
+  </body>
+</html>

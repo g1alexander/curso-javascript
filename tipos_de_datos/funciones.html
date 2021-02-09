@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>funciones</h1>
+    <script>
+      //funciones declaras
+      function estoEsUnaFuncion() {
+        console.log("esto es una funcion");
+      }
+      //incovar una funcion
+      estoEsUnaFuncion();
+      // estoEsUnaFuncion()
+
+      //funcion que devulve un valor
+      function estoEsUnaFuncionQueDevulverValor() {
+        console.log("esto es una funcion");
+        // return "hola mundo" en Notion hay una explicacion para esto (notas)
+        console.log("esto es una funcion 2");
+        return "la funcion esta devolviendo un valor";
+      }
+
+      /* console.log(estoEsUnaFuncionQueDevulverValor()); 
+      esto es mala practica porque la funcion tiene un console.log() */
+
+      let funcionDevolverValor = estoEsUnaFuncionQueDevulverValor();
+      console.log(funcionDevolverValor);
+
+      //funciones con parametros
+
+      function saludo(nombre, edad) {
+        console.log(`Hola! mi nombre es ${nombre} y tengo ${edad} años`);
+      }
+      saludo("Alex", 20);
+      saludo(); /*
+        si mandas la funcion sin parametros te mandara undefined
+        una solucion es poner a la funcion valores por defectos 
+        eso se puede desde EMAScript 6
+      */
+      function saludo2(nombre = "desconocido", edad = 0) {
+        console.log(`Hola! mi nombre es ${nombre} y tengo ${edad} años`);
+      }
+      saludo2();
+
+      // funciones declaradas vs funciones expresadas
+      declarada();
+
+      function declarada() {
+        console.log(`esto es una funcion declarada, puede
+        invocarse en cualquier parte del codigo, incluso antes
+        de que la funcion sea declarada`);
+      }
+
+      // expresada()
+
+      const expresada = function () {
+        console.log(`esto es una funcion expresada, puede
+        invocarse solo desde de declara esta funcion, si lo haces antes
+        te marcara..  Cannot access 'expresada' before initialization`);
+      };
+
+      expresada();
+    </script>
+  </body>
+</html>

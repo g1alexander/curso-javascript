@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cadenas de texto (String)</h1>
+    <script>
+      let nombre = "alex";
+      let apellido = "Granados";
+      let saludo = new String("hola mundo"); //esto es muy formal y poco utilizado
+      let parrafo =
+        "             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.            ";
+      console.log(nombre, apellido, saludo, parrafo);
+      console.log(
+        "propiedades",
+        nombre.length,
+        apellido.length,
+        saludo.length,
+        "-",
+        "metodos",
+        nombre.toUpperCase(),
+        apellido.toLowerCase(),
+        parrafo.trim(),
+        parrafo.includes("alex"),
+        parrafo.split(",")
+        // hay muchos mas metodos
+      );
+    </script>
+  </body>
+</html>
