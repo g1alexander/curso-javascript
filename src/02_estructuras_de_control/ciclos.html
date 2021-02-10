@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ciclos</h1>
+    <script>
+      let contador = 0;
+      // while (contador < 10) {
+      //   console.log("while " + contador);
+      //   contador++;
+      // }
+
+      while (contador > 10) {
+        console.log("while " + contador);
+        contador++;
+      }
+
+      do {
+        console.log("do while " + contador);
+        contador++;
+      } while (contador > 10);
+      /*
+      Nota: esto solo mostrara 1 "do while" la razon es porque
+      contador ya vale 10 el do while se ejecuta siempre una vez
+
+      -- la diferencia entre el do while y while es que 
+      el "do" siempre se ejecutara una vez y luego hara la 
+      validacion, mientra que el while tiene que pasar la 
+      validacion, si esta no pasa no mostrara nada
+      
+      Nota2: el ciclo while y do while en JS ya el 2021 esta 
+      siendo muy poco utilizado
+      */
+
+      for (let i = 0; i < 10; i++) {
+        console.log("for " + i);
+      }
+      console.log("********************");
+
+      let numeros = [12, 23, 1, 29, 4, 5, 6, 7];
+      for (let i = 0; i < numeros.length; i++) {
+        console.log("Numero: " + numeros[i]);
+      }
+
+      console.log("********************");
+
+      /*
+        Desde EMAScript 6 llego 2 variante del for
+
+        forin: me permite solo recorrer propiedades de un objeto primitivo
+          (funciona mas para iterar objetos)
+        forof: me permite todos los elementos que sean iterables en JS,
+        osea, todo elemento que se pueda separar en partes mas pequeñas
+          (se pueden iterar arreglos, cadenas de texto, pero, no objetos)
+      */
+
+      const jhon = {
+        nombre: "alex",
+        apellido: "ibarra",
+        edad: 20,
+      };
+
+      for (const prop in jhon) {
+        /*
+          para mostrar los datos del objeto en el navegador
+          solo lo podemos hacer atraves de "object[item]" y no 
+          atraves de object.item
+        */
+        console.log(`propiedad: ${prop}, valor: ${jhon[prop]}`);
+      }
+
+      console.log("********************");
+
+      for (const elemt of numeros) {
+        console.log(elemt);
+      }
+    </script>
+  </body>
+</html>

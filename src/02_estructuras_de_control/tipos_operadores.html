@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>tipos de operadores</h1>
+    <script>
+      console.log("*******************");
+      // let a = 5 + 5
+      // let a = 5 + 5 - 2
+      // let a = 5 + 5 - (2 + 4)
+      // let a = 5 + 5 * 10
+      // let a = 5 / 5 devulve el resultado de la division
+      let a = 5 % 5; //devulve el resido de esa division
+      console.log(a);
+      console.log("*******************");
+
+      console.log(9 > 10); //false
+      console.log(9 >= 9); //true
+      console.log(8 < 9); //true
+      console.log(8 <= 8); //true
+
+      console.log("*******************");
+      /*
+        = 1 igual es asignacion de variable
+        == 2 iguales es una comparacion de valor
+        === 3 iguales es una comparacion entre el valor y el tipo de dato
+
+        recomendacion: actualmente es recomendable usar "===" por el 
+        siguiente ejemplo
+      */
+
+      console.log(7 == 7); //true
+      console.log("7" == 7); //true
+      console.log(0 == false); //true
+
+      console.log("*******************");
+      console.log(7 === 7); //true
+      console.log("7" === 7); //false
+      console.log(0 === false); //false
+      console.log("*******************");
+
+      let b = 2;
+      b += 2;
+      b -= 2;
+      b *= 3;
+      b /= 2;
+      console.log(b); //3 - reasultado de todos los incre y decre anteriores
+
+      /* es mas recomendable usar i++ y no ++i 
+        porque asi nos evitamos que se sume o reste sin 
+        ninguna logica - ejemplo
+      */
+
+      let i = 2;
+      console.log(i++); //2
+      console.log(++i); //4
+      /*la razon del 2 es porque aun tiene ese valor
+      y no ha sumado todavia el siguiente
+      en cambio el 4 es porque ya tomo la linea 57, 58, y 59 
+      y los incremento, posteriormente se imprime y da 4 en result
+      */
+      console.log("*******************");
+      console.log(!true); //false
+      console.log(!false); //true
+      console.log("9" === 9 || 9 === 9); //true
+      console.log("9" === 9 && 9 === 9); //false
+    </script>
+  </body>
+</html>

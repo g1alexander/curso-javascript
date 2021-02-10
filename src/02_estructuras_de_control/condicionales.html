@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>condicionales</h1>
+    <script>
+      let edad = 20;
+
+      if (edad >= 18) {
+        console.log("eres mayor de edad");
+      } else {
+        console.log("eres menor de edad");
+      }
+
+      if (edad > 17) {
+        console.log("eres mayor de edad");
+      } else {
+        console.log("eres menor de edad");
+      }
+
+      if (edad <= 17) {
+        console.log("eres menor de edad");
+      } else {
+        console.log("eres mayor de edad");
+      }
+      if (edad < 18) {
+        console.log("eres menor de edad");
+      } else {
+        console.log("eres mayor de edad");
+      }
+
+      console.log("***********************");
+
+      let hour = -2;
+
+      if (hour >= 0 && hour <= 5) {
+        console.log("estoy durmiendo");
+      } else if (hour >= 6 && hour <= 11) {
+        console.log("buenos dias");
+      } else if (hour >= 12 && hour <= 18) {
+        console.log("buenos tarde");
+      } else if (hour >= 19 && hour <= 23) {
+        console.log("buenos noches");
+      } else if (hour < 0 || hour > 23) {
+        console.log("error de hora");
+      }
+      console.log("***********************");
+      
+      // operador ternario (se hace una condicion en una sola linea de codigo)
+      
+      let mayorEdad = edad >= 18 ? "eres mayor de edad" : "eres menor";
+      // otra mejor manera de expresar la sintaxis
+      let mayor = edad >= 18 
+      ? "eres mayor de edad" 
+      : "eres menor";
+      
+      console.log(mayorEdad, mayor);
+      console.log("***********************");
+
+      /*
+        domingo = 0, lunes = 1, martes- 2, 
+        miercoles = 3, jueves = 4, viernes =5
+        sabado = 6
+      */
+      let dia = 345
+      switch(dia){
+        case 0:
+          console.log("domingo");
+          break
+        case 1:
+          console.log("lunes");
+          break
+        case 2:
+          console.log("martes");
+          break
+        case 3:
+          console.log("miercoles");
+          break
+        case 4:
+          console.log("jueves");
+          break
+        case 5:
+          console.log("viernes");
+          break
+        case 6:
+          console.log("sabado");
+          break
+        default:
+          console.log("error");
+          break
+        }
+
+    </script>
+  </body>
+</html>
