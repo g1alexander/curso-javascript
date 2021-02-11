@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Manejo de errores</h1>
+    <script>
+      try {
+        console.log("Hola desde el try");
+        leed;
+      } catch (error) {
+        console.log(`este es un error ${error}`);
+      } finally {
+        console.log("hola desde el finally, este simpre se va a ejecutar");
+      } // el finally no es muy utilizado en casos reales
+
+      // podemos personalizar un error
+
+      try {
+        let numero = 12;
+        if (isNaN(numero)) {
+          throw new Error("El caracter ingresado no es un numero");
+        }
+
+        console.log(numero * numero);
+      } catch (error) {
+        console.log(`se ha producido el siguiente ${error}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>parametro rest - operador spread</h1>
+    <script>
+      function sumar(a, b, ...c) {
+        let resultado = a + b;
+        c.forEach(function (number) {
+          resultado += number;
+        });
+        return resultado;
+      }
+
+      console.log(sumar(1, 2, 3));
+      console.log(sumar(1, 2, 3, 4));
+      console.log(sumar(1, 2, 3, 4, 5));
+      console.log(sumar(1, 2, 3, 4, 5, 6));
+      console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+      console.log("******************************8");
+
+      const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [6, 7, 8, 9, 0];
+
+      console.log(arr1, arr2);
+
+      const arr3 = [arr1, arr2];
+      const arr4 = [...arr1, ...arr2]; //unirlos
+
+      console.log(arr3, arr4);
+
+      /*
+      DATO CURIOSO
+      Otra forma de crear un Array a partir de los valores de otras 
+      Arrays es con el método .concat();  
+      Ej:
+      */
+      const array1 = [1, 2, 3, 4, 5],
+        array2 = [6, 7, 8, 9, 10],
+        array3 = [11, 12, 13, 14, 15];
+      arrayFinal = array1.concat(array2, array3);
+    </script>
+  </body>
+</html>

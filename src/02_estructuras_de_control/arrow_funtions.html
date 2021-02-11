@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>arrow funtions</h1>
+    <script>
+      const hola = function (nombre) {
+        return `hola mi nombre es ${nombre}`;
+      };
+
+      //
+      const hola2 = (nombre) => `hola mi nombre es ${nombre}`;
+
+      console.log(hola("alex"));
+      console.log(hola2("granados"));
+
+      console.log("********************");
+      const number = () => {
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+      };
+
+      number();
+      console.log("********************");
+
+      const arreglo = [1, 2, 3, 4, 5, 6];
+
+      arreglo.forEach((elemt) => console.log(elemt));
+      console.log("********************");
+
+      function ventana() {
+        console.log(this);
+      }
+      ventana(); //muestra es contexto global window
+
+      /*esto no se deberia hacer*/
+      const perro2 = {
+        nombre: "matt",
+        ladrar: () => {
+          console.log(this);
+        },
+      };
+      perro2.ladrar();
+
+      /*forma recomendable de trabajar*/
+      const perro = {
+        nombre: "matt",
+        ladrar() {
+          console.log(this);
+        },
+      };
+      perro.ladrar();
+    </script>
+  </body>
+</html>

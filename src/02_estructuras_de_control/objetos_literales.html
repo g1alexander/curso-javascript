@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>objetos literales</h1>
+    <script>
+      let nombre = "mateo",
+        edad = 4;
+      //forma antigua
+      const dog = {
+        nombre: nombre,
+        edad: edad,
+        ladrar: function () {
+          console.log("guaaa guaa");
+        },
+      };
+      console.log(dog);
+      dog.ladrar();
+
+      console.log("********************");
+      //forma moderna
+
+      const dog2 = {
+        nombre,
+        edad,
+        raza: "no se :3",
+        ladrar() {
+          console.log("guaa guaa guaa");
+        },
+      };
+
+      console.log(dog2);
+      dog2.ladrar();
+    </script>
+  </body>
+</html>
