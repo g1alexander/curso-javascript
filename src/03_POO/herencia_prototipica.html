@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>herencia Prototipica</h1>
+    <script>
+      function Animal(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      Animal.prototype.sonar = function () {
+        console.log(`hago sonidos ${this.nombre}`);
+      };
+      Animal.prototype.saludar = function () {
+        console.log(`saludo ${this.nombre}`);
+      };
+
+      const bunny = new Animal("bunny", "hembra");
+      console.log(bunny);
+      bunny.sonar();
+
+      // herencia
+      function Perro(nombre, genero, tamanio) {
+        // metodo super contructor (mandar a llamar el metodo del padre)
+        this.super = Animal;
+        this.super(nombre, genero);
+        this.tamanio = tamanio;
+      }
+      /* heredamos 
+      todos los atributos y metodos de "animal"*/
+      Perro.prototype = new Animal();
+      /*constructor, hereda todo lo de Animal*/
+      Perro.prototype.constructor = Perro;
+
+      // sobrescribir metodo
+      Perro.prototype.sonar = function () {
+        console.log("holi, soy un perro");
+      };
+      // crear un nuevo metodo para perro
+      Perro.prototype.ladrar = function () {
+        console.log("guaa guaa");
+      };
+
+      const marc = new Perro("marc", "macho", "mediano");
+      console.log(marc);
+      marc.sonar();
+      marc.ladrar();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Prototipos</h1>
+    <script>
+      // forma en la que no se deberia hacer. no es funcional
+      const animal = {
+        nonbre: "mar",
+        sonar() {
+          console.log("hago sonidos");
+        },
+      };
+      const animal2 = {
+        nonbre: "bunny",
+        sonar() {
+          console.log("hago sonidos");
+        },
+      };
+      console.log(animal, animal2);
+      console.log("***************************");
+      /*
+        si bien esto esta bien hecho, no es recomendable poner
+        metodos en el contructor porque ocuparia mucho 
+        espacio en memeria
+      */
+      function Animal(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+        // this.sonar = function () {
+        //   console.log(`hago sonidos ${this.nombre}`);
+        // };
+      }
+      // forma correcta
+      Animal.prototype.sonar = function () {
+        console.log(`hago sonidos ${this.nombre}`);
+      };
+      const mar = new Animal("mar", "macho");
+      const bunny = new Animal("bunny", "hembra");
+      console.log(mar, bunny);
+      bunny.sonar();
+    </script>
+  </body>
+</html>

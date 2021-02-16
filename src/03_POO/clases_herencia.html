@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>clases y herencia</h1>
+    <script>
+      /*forma antes de EMAScript 6*/
+      /*
+      {
+        function Animal(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        Animal.prototype.sonar = function () {
+          console.log(`hago sonidos ${this.nombre}`);
+        };
+        Animal.prototype.saludar = function () {
+          console.log(`saludo ${this.nombre}`);
+        };
+        function Perro(nombre, genero, tamanio) {
+          metodo super contructor (mandar a llamar el metodo del padre)
+          this.super = Animal;
+          this.super(nombre, genero);
+          this.tamanio = tamanio;
+        }
+        heredamos 
+        todos los atributos y metodos de "animal"
+        Perro.prototype = new Animal();
+        constructor, hereda todo lo de Animal
+        Perro.prototype.constructor = Perro;
+        function Animal(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        Animal.prototype.sonar = function () {
+          console.log(`hago sonidos ${this.nombre}`);
+        };
+        Animal.prototype.saludar = function () {
+          console.log(`saludo ${this.nombre}`);
+        };
+        function Perro(nombre, genero, tamanio) {
+          metodo super contructor (mandar a llamar el metodo del padre)
+          this.super = Animal;
+          this.super(nombre, genero);
+          this.tamanio = tamanio;
+        }
+        heredamos 
+        todos los atributos y metodos de "animal"
+        Perro.prototype = new Animal();
+        constructor, hereda todo lo de Animal
+        Perro.prototype.constructor = Perro;
+
+        sobrescribir metodo
+        Perro.prototype.sonar = function () {
+          console.log("holi, soy un perro");
+        };
+        crear un nuevo metodo para perro
+        Perro.prototype.ladrar = function () {
+          console.log("guaa guaa");
+        };
+        sobrescribir metodo
+        Perro.prototype.sonar = function () {
+          console.log("holi, soy un perro");
+        };
+        crear un nuevo metodo para perro
+        Perro.prototype.ladrar = function () {
+          console.log("guaa guaa");
+        };
+      }*/
+
+      // forma despues de EMAScript 6
+      // clase padre
+      class Animal {
+        /*siempre se pone el constructor*/
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        sonar() {
+          console.log(`hago sonidos ${this.nombre}`);
+        }
+        saludar() {
+          console.log(`saludo ${this.nombre} ${this.genero}`);
+        }
+      }
+      // herencia
+      class Perro extends Animal {
+        /*los atributos heredaros se ponen 
+        dentro del metodo especial "super"*/
+        constructor(nombre, genero, tamanio) {
+          super(nombre, genero);
+          this.tamanio = tamanio;
+        }
+        sonar() {
+          console.log("holii, soy un perro");
+        }
+        ladrar() {
+          console.log("guuaa guuaa");
+        }
+      }
+      const mari = new Animal("mari", "hembra"),
+        scoody = new Perro("scoody", "macho", "gigante");
+
+      console.log(mari);
+      mari.saludar();
+      mari.sonar();
+      console.log("******************");
+
+      console.log(scoody);
+      scoody.saludar();
+      scoody.sonar();
+      scoody.ladrar();
+    </script>
+  </body>
+</html>

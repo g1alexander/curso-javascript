@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>metodos estaticos && getters y setters</h1>
+    <script>
+      class Animal {
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        sonar() {
+          console.log(`hago sonidos ${this.nombre}`);
+        }
+        saludar() {
+          console.log(`saludo ${this.nombre} ${this.genero}`);
+        }
+      }
+      class Perro extends Animal {
+        constructor(nombre, genero, tamanio) {
+          super(nombre, genero);
+          this.tamanio = tamanio;
+          // asignamos valor
+          this.raza = null;
+        }
+        sonar() {
+          console.log("holii, soy un perro");
+        }
+        ladrar() {
+          console.log("guuaa guuaa");
+        }
+        //metodo estatico
+        static eres() {
+          console.log(
+            "soy una clase de mamifero canino y soy el mejor amigo del hombre"
+          );
+        }
+        // getter y setter
+        get getRaza() {
+          return this.raza;
+        }
+        set setRaza(raza) {
+          this.raza = raza;
+        }
+      }
+      const scoody = new Perro("scoody", "macho", "gigante");
+
+      console.log(scoody);
+      scoody.saludar();
+      scoody.sonar();
+      scoody.ladrar();
+
+      console.log("****************");
+      Perro.eres();
+      // scoody.getRaza() error
+      console.log(scoody.getRaza);
+      // scoody.setRaza(); error
+      scoody.setRaza = "Gran danes";
+      console.log(scoody.getRaza);
+    </script>
+  </body>
+</html>
