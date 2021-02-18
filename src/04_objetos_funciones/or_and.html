@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>AND y OR</h1>
+    <script>
+      // function saludar(nombre = "desconocido") {
+      //   console.log(`mi nombre es ${nombre}`);
+      // }
+      function saludar(nombre) {
+        // la manera antigua de validar
+        nombre = nombre || "desconocido";
+        console.log(`mi nombre es ${nombre}`);
+      }
+      saludar("alex");
+      saludar();
+      console.log("****************");
+      // mostrara valores de la izquierda
+      console.log("cadena" || "valor derecha");
+      console.log(true || "valor derecha");
+      console.log({} || "valor derecha");
+      console.log([] || "valor derecha");
+      console.log(42 || "valor derecha");
+      console.log(-2 || "valor derecha");
+      // mostrara valores de la derecha
+      console.log(false || "valor derecha");
+      console.log(null || "valor derecha");
+      console.log(undefined || "valor derecha");
+      console.log(0 || "valor derecha");
+      console.log(NaN || "valor derecha");
+      console.log("" || "valor derecha");
+      console.log("***************");
+      // mostrara valores de la izquierda
+      console.log(false && "valor derecha");
+      console.log(null && "valor derecha");
+      console.log(undefined && "valor derecha");
+      console.log(0 && "valor derecha");
+      console.log(NaN && "valor derecha");
+      console.log("" && "valor derecha");
+      console.log("***************");
+      // mostrara valores de la derecha
+      console.log("cadena" && "valor derecha");
+      console.log(true && "valor derecha");
+      console.log({} && "valor derecha");
+      console.log([] && "valor derecha");
+      console.log(42 && "valor derecha");
+      console.log(-2 && "valor derecha");
+    </script>
+  </body>
+</html>

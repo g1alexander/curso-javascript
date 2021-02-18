@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>objeto console</h1>
+    <script>
+      console.log("mensaje en consola");
+      console.error("mensaje de error");
+      console.warn("mensaje de alerta");
+      console.clear(); //limpia la consola
+      console.log(document); //vista html
+      console.dir(document); //vista html en objeto
+      console.clear();
+      let nombre = "alex",
+        edad = 20; //se pueden usar comodines para string "%s" y number "%d"
+      console.log("Hola mi nombre es %s y tengo %d anios", nombre, edad);
+      console.clear();
+
+      console.group("este es un grupo en console js");
+      console.log("hola mundo");
+      console.groupEnd();
+      console.clear();
+
+      console.log(console); //muestra un objeto
+      console.table(Object.entries(console).sort()); //muestra una tabla del objetos
+
+      const array1 = [1, 2, 3, 4, 5];
+      console.table(array1);
+      console.clear();
+
+      // muestra cuanto tiempo tarda en ejecutar un pedaso de codigo
+      //los alias deben ser iguales
+      console.time("tarda en ejecutar");
+      const arreglo = Array(1000);
+      for (let i = 0; i < arreglo.length; i++) {
+        arreglo[i] = i;
+      }
+      console.timeEnd("tarda en ejecutar");
+      // console.log(arreglo);
+      console.clear();
+
+      for (let i = 0; i < 10; i++) {
+        //muestra cuantas veces se jecuta un codigo
+        console.count("codigo for");
+        console.log(i);
+      }
+      console.clear();
+
+      let x = 4,
+        y = 3,
+        prueba = "x debe ser siempre < que y";
+      // nos permite hacer testing a una escala muy pequenia
+      console.assert(x < y, (x, y, prueba));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>funciones anonimas autoejecutable</h1>
+    <script>
+      (function () {
+        console.log("mi primera IIFE");
+      })();
+
+      (function (d, w, c) {
+        console.log("mi segunda IIFE");
+        console.log(d); //objeto document
+        console.log(w); //objeto global window
+        c.log(c); //objeto console
+      })(document, window, console);
+
+      // formas de escribir las funciones anonimas
+      // auto ejecutables
+      (function () {
+        console.log("forma clasica");
+      })();
+
+      ((function () {
+        console.log("version crockford");
+      })());
+
+      +function () {
+        console.log("version unaria");
+      }();
+
+      -function(){
+          console.log('Version Unaria Ema');
+      }();
+
+      !function () {
+        console.log("version facebook");
+      }();
+    </script>
+  </body>
+</html>

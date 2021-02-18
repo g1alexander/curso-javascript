@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>expresiones regulares</h1>
+    <script>
+      //primera forma de declarar
+      let cadena = `Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit. Vestibulum ante 
+      ipsum primis in faucibus orci luctus et ultrices 
+      posuere cubilia Curae; Donec velit neque, auctor 
+      sit amet aliquam vel, ullamcorper sit amet ligula.`;
+
+      let expReg = RegExp("ipsum", "g");
+      console.log(expReg.test(cadena));
+      console.log(expReg.exec(cadena));
+
+      //segunda forma de declarar
+      let expReg2 = /ipsum/gi;
+      console.log(expReg2.test(cadena));
+      console.log(expReg2.exec(cadena));
+    </script>
+  </body>
+</html>

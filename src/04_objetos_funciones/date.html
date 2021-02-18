@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>objeto DATE</h1>
+    <script>
+      // console.log(Date());
+      let fecha = new Date();
+      console.log(fecha);
+      //dia de la semana empieza de Domingo = 0 ...
+      console.log(fecha.getDay());
+      console.log(fecha.getDate()); //dia del mes
+      //mes del anio empieza por enero = 0 ...
+      console.log(fecha.getMonth());
+      console.log(fecha.getFullYear()); //anio
+      console.log(fecha.getHours()); //hora actual formato 24h
+      console.log(fecha.getMinutes()); //minuto actual
+      console.log(fecha.getSeconds()); //segundo actual
+      console.log(fecha.getMilliseconds()); //milisengundo actual
+      console.log(fecha.toString()); //fecha actual - todo el formato
+      console.log(fecha.toDateString()); //solo la fecha actual
+      console.log(fecha.toLocaleDateString()); //fecha con formato
+      console.log(fecha.toLocaleTimeString()); //hora actual
+      console.log(fecha.getUTCHours()); //hora UTC 0 (londres)
+      /*tambien estan los UTC de de los demas metodos*/
+
+      //tiempo transcurrido desde la hora cero (01-01-1970 / 00:00)
+      console.log(Date.now());
+      //mi cumple :3
+      let cumple = new Date(2000, 7, 26);
+      console.log(cumple);
+    </script>
+  </body>
+</html>
