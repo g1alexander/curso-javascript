@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 01</h1>
+    <script>
+      /*Programa una función que cuente
+        el número de caracteres de una cadena de texto,
+        pe. miFuncion("Hola Mundo") devolverá 10.*/
+      let cadena = prompt("ingresa cualquier cadena de texto");
+      let expresion = new RegExp(
+        "^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$"
+      );
+      /*Explicación:
+      Busca al inicio que empiece por una palabra (letras repetidas 1 o más veces) 
+      a continuación, se repite el siguiente conjunto: ( un espacio + una palabra ) 
+      de cero a varias veces. Finalmente, debe terminar con fin de línea/string.*/
+      let validacion = expresion.exec(cadena);
+
+      const fCadena = (cadena) => {
+        if (cadena === null) {
+          console.log("has cancelado");
+        } else {
+          console.log(`tu cadena tiene: ${cadena.length} caracteres`);
+        }
+      };
+
+      if (validacion && cadena !== "") {
+        fCadena(cadena);
+      } else {
+        console.log(
+          `tu cadena solo puede contener letras, deben separarse como mucho por un espacio y no puedes enviar la cadena vacia`
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 04</h1>
+    <script>
+      /*Programa una función que repita un texto X veces, 
+      pe. miFuncion('Hola Mundo', 3) 
+      devolverá Hola Mundo Hola Mundo Hola Mundo.
+      */
+      let cadena = prompt("ingresa cualquier cadena de texto");
+      let numero = prompt("cuantas veces quieres que se repita la cadena?");
+      let expresion = new RegExp(
+        "^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$"
+      );
+      let validacion = expresion.exec(cadena);
+
+      let expresionNumero = /^[0-9]{1,3}$/;
+      let validacionNumero = expresionNumero.exec(numero);
+
+      const fCadena = (cadena, numero) => {
+        if (cadena === null) {
+          console.log("has cancelado el ingreso de la cadena");
+        } else {
+          let esp = cadena + " ";
+          console.log(`tu cadena: ${esp.repeat(numero)} `);
+        }
+      };
+
+      if (validacion && cadena !== "") {
+        numero === "" || numero === null || validacionNumero === null
+          ? console.log(
+              "has cancelado la duplicacion de tu cadena, enviaste vacio o enviaste un texto y deberia ser un numero"
+            )
+          : fCadena(cadena, parseInt(numero));
+      } else {
+        console.log(
+          `tu cadena solo puede contener letras, deben separarse como mucho por un espacio y no puedes enviar la cadena vacia`
+        );
+      }
+    </script>
+  </body>
+</html>

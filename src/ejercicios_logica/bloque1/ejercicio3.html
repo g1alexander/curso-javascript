@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 03</h1>
+    <script>
+      /*Programa una función que dada una String te devuelva
+      un Array de textos separados por cierto caracter, pe.
+      miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+      */
+      let cadena = prompt("ingresa cualquier cadena de texto");
+      let expresion = new RegExp(
+        "^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$"
+      );
+      let validacion = expresion.exec(cadena);
+
+      const fCadena = (cadena, espacio) => {
+        if (cadena === null) {
+          console.log("has cancelado el ingreso de la cadena");
+        } else {
+          console.log(Array.from(cadena.split(espacio)));
+        }
+      };
+
+      if (validacion && cadena !== "") {
+        fCadena(cadena, " ");
+      } else {
+        console.log(
+          `tu cadena solo puede contener letras, deben separarse como mucho por un espacio y no puedes enviar la cadena vacia`
+        );
+      }
+    </script>
+  </body>
+</html>
