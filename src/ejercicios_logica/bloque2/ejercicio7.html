@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 07</h1>
+    <script>
+      /*Programa una función que valide si una palabra o frase dada,
+      es un palíndromo (que se lee igual en un sentido que en otro),
+      pe. mifuncion("Salas") devolverá true.
+      */
+      let expresion = new RegExp(
+        "^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$"
+      );
+
+      const validarPalabra = (str = undefined) => {
+        if (str === undefined) {
+          console.warn("no has ingresado nada");
+        } else {
+          if (expresion.exec(str)) {
+            let polindromo = str
+              .toLowerCase()
+              .replace(/ /g, "")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "");
+            let frase = polindromo.split("").reverse().join("");
+
+            if (frase === polindromo) {
+              console.info(true);
+            } else {
+              console.info(false);
+            }
+          } else {
+            console.error("no puedes ingresar un numero");
+          }
+        }
+      };
+
+      validarPalabra("Amad a la dama");
+    </script>
+  </body>
+</html>

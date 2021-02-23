@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 05</h1>
+    <script>
+      /*Programa una función que invierta las palabras 
+      de una cadena de texto, pe. miFuncion("Hola Mundo")
+      devolverá "odnuM aloH".
+      */
+      let expresion = new RegExp(
+        "^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$"
+      );
+      const stringInvertido = (texto = undefined) => {
+        texto === undefined
+          ? console.warn("no has ingresado nada")
+          : expresion.exec(texto)
+          ? console.log(texto.split("").reverse().join(""))
+          : console.error("no puedes ingresar un numero");
+      };
+
+      stringInvertido("Hola Mundo");
+    </script>
+  </body>
+</html>
