@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 13</h1>
+    <script>
+      /*Programa una función que determine 
+      si un número es par o impar, pe. miFuncion(29) devolverá Impar*/
+
+      const par = (numero = undefined) => {
+        if (numero <= 0) {
+          console.warn("solo numeros mayores a 0");
+        } else if (numero === undefined) {
+          console.warn("no enviaste nada");
+        } else if (typeof numero !== "number") {
+          console.error("debes ingresar un numero");
+        } else {
+          if (numero % 2 === 0) {
+            console.log("el numero es par");
+          } else {
+            console.log("el numero es impar");
+          }
+        }
+      };
+
+      par(1);
+    </script>
+  </body>
+</html>

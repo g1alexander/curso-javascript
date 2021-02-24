@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 14</h1>
+    <script>
+      /*Programa una función para convertir grados Celsius 
+      a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F*/
+
+      const grados = (numero = undefined, grado = undefined) => {
+        if (numero === undefined && grado === undefined) {
+          console.warn("ingresa datos");
+        } else {
+          if (typeof grado !== "string" || typeof numero !== "number") {
+            console.error("estas ingresadndo tipos de dato incorrecto");
+          } else {
+            grado = grado.toLowerCase();
+            switch (grado) {
+              case "f":
+                let c = (numero - 32) / 1.8;
+                console.log(`${numero} ${grado} es ${c} c`);
+                break;
+              case "c":
+                let f = numero * 1.8 + 32;
+                console.log(`${numero} ${grado} es ${f} f`);
+                break;
+              default:
+                console.warn(`debes ingresar "c" o "f"`);
+                break;
+            }
+          }
+        }
+      };
+
+      grados(0, "c");
+    </script>
+  </body>
+</html>
