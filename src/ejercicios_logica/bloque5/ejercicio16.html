@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 16</h1>
+    <script>
+      /*Programa una función que devuelva el monto final
+      después de aplicar un descuento a una cantidad dada,
+      pe. miFuncion(1000, 20) devolverá 800.*/
+
+      const descuento = (numero = undefined, desc = 0) => {
+        if (numero === undefined)
+          return console.warn("debes ingresar un numero");
+        if (desc === 0)
+          return console.log(
+            `parece que no hay descuento, tu valor es: ${numero}`
+          );
+        if (typeof numero === "string" || typeof desc === "string")
+          return console.error("el dato debe ser numerico");
+        if (desc > 100) return console.warn("no hay descuento mayor a 100");
+        if (desc < 0) return console.warn("no hay descuentos negativos");
+
+        let subtotal = (numero * desc) / 100;
+        let total = numero - subtotal;
+        console.info(
+          `aplicando el descuento del ${desc}% a ${numero} da un total de: ${total}`
+        );
+      };
+
+      descuento(1000, 59.9);
+    </script>
+  </body>
+</html>

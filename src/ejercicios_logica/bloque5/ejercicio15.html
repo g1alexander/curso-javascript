@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 15</h1>
+    <script>
+      /*Programa una función para convertir números 
+      de base binaria a decimal y viceversa, pe. miFuncion(100,2) 
+      devolverá 4 base 10..*/
+
+      let expresionNumero = /^[0-1]{1,10}$/;
+
+      const convertor = (number = undefined, base = undefined) => {
+        if (number === undefined && base === undefined) {
+          console.warn("parace que no has enviado nada en numero o la base");
+        } else if (Number.isInteger(number)) {
+          switch (base) {
+            case 2:
+              if (expresionNumero.exec(number)) {
+                let arr = number
+                  .toString()
+                  .replace(/\D/g, "0")
+                  .split("")
+                  .map(Number);
+                arr.reverse();
+                let valor = [];
+                let suma = 0;
+                for (let i = 0; i < arr.length; i++) {
+                  valor = Math.pow(2, i);
+                  valor = valor * arr[i];
+                  suma += valor;
+                }
+                console.log(`${suma} base 10`);
+              } else {
+                console.warn("los datos base 2 deben ser binarios");
+              }
+              break;
+            case 10:
+              let numeroDecimal = number.toString(2);
+              console.log(
+                `su decimal ${number} a binario es: ${numeroDecimal}`
+              );
+              break;
+            default:
+              console.warn(" la base tiene que ser 2 o 10");
+              break;
+          }
+        } else {
+          console.error("los datos deben ser numericos");
+        }
+      };
+
+      convertor(100101, 2);
+    </script>
+  </body>
+</html>

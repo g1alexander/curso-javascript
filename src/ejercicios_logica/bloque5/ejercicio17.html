@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 17</h1>
+    <script>
+      /*Programa una función que dada una fecha
+      válida determine cuantos años han pasado hasta
+      el día de hoy, pe. miFuncion(new Date(1984,4,23))
+      devolverá 35 años (en 2020).*/
+      let validarFecha = /^(0[1-9]|[1-2]\d|3[01])(\/)(0[1-9]|1[012])\2(\d{4})$/;
+
+      const fecha = (fecha) => {
+        if (!validarFecha.exec(fecha))
+          return (
+            console.warn("formato de fecha invalido"),
+            console.log(`el formato debe ser "dd/mm/aaaa"`)
+          );
+        fecha = fecha.split("/").reverse().join(",");
+        fecha = new Date(fecha);
+        let fechaActual = new Date().getFullYear();
+        fecha = fecha.getFullYear();
+        let anios = fechaActual - fecha;
+        console.log(
+          `Han pasado ${anios} años desde ${fecha}, es año actual es ${fechaActual}`
+        );
+      };
+      fecha("23/04/1984");
+    </script>
+  </body>
+</html>
