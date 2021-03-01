@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 19</h1>
+    <script>
+      /*Programa una función que valide que un
+      texto sea un nombre válido, pe. miFuncion("Jonathan MirCha")
+      devolverá verdadero.*/
+      let expresion = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/;
+      let expre = /(^[A-ZÁÉÍÓÚ]{1}([a-zñáéíóú]+){2,})(\s[A-ZÁÉÍÓÚ]{1}([a-zñáéíóú]+){2,})?$/;
+
+      const nombre = (texto = undefined) => {
+        if (texto === undefined) return console.warn("no puede estar vacio");
+        if (!expresion.exec(texto))
+          return console.error("solo deben estar letras");
+        if (!expre.exec(texto))
+          return console.error(
+            "los nombres deben empezar con mayusculas y deben estar separados por un solo espacio"
+          );
+
+        console.log(`su nombre ${texto} es ${true} :)`);
+      };
+
+      nombre("Jonathan Mircha");
+
+      /*
+      convierte cualquier la primera letra de una palabra en mayuscula
+        const first_letter_uppercase_word = (str) => {
+          return str.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase());
+        };
+        console.log(first_letter_uppercase_word(hola));
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 20</h1>
+    <script>
+      /*Programa una función que valide que un 
+      texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") 
+      devolverá verdadero.*/
+      let valEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z](?:[a-z]*[a-z])?\.)+[a-z](?:[a-z]*[a-z])?$/;
+
+      const email = (texto = undefined) => {
+        if (texto === undefined) return console.warn("no puede estar vacio");
+        if (!valEmail.exec(texto))
+          return console.error(
+            "no es un email, los email deben tener example@example.co"
+          );
+        console.log(`tu email ${texto} es correcto`);
+      };
+
+      email("jonmircha@gmail.es");
+    </script>
+  </body>
+</html>

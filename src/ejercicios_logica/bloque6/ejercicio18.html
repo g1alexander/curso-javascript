@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 18</h1>
+    <script>
+      /*Programa una función que dada una
+      cadena de texto cuente el número de vocales
+      y consonantes, pe. miFuncion("Hola Mundo")
+      devuelva Vocales: 4, Consonantes: 5..*/
+
+      let expresionReg = /[^aeiou]/;
+      let expresion = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/;
+      let cons = 0;
+      let vocal = 0;
+
+      const cadena = (texto = undefined) => {
+        if (texto === undefined) return console.warn("no puede estar vacio");
+        if (!expresion.exec(texto))
+          return console.error("solo deben estar letras");
+
+        texto = texto.replace(/ /g, "");
+        texto = texto.toLowerCase();
+        texto = texto.split("");
+        for (let i = 0; i < texto.length; i++) {
+          expresionReg.exec(texto[i])
+            ? (cons += texto[i].length)
+            : (vocal += texto[i].length);
+        }
+        console.log(`hay ${cons} consonantes y ${vocal} vocales`);
+      };
+
+      cadena("Hola mundo");
+    </script>
+  </body>
+</html>
