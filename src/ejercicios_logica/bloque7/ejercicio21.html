@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 21</h1>
+    <script>
+      /*Programa una función que dado un array
+      numérico devuelve otro array con los números
+      elevados al cuadrado, pe. mi_funcion([1, 4, 5])
+      devolverá [1, 16, 25].*/
+
+      let valor = [];
+
+      const arrayCuadrado = (array = undefined) => {
+        if (array === undefined) return console.warn("no puede estar vacio");
+        if (!(array instanceof Array) && !(valor instanceof Array))
+          return console.error("debes ingresar un array");
+        array.forEach((elem, i) => {
+          if (typeof array[i] == "number") {
+            valor[i] = elem * elem;
+          } else {
+            console.log(`el elemento ${array[i]} no es un numero`);
+          }
+        });
+        console.log(valor);
+      };
+
+      arrayCuadrado([1, 4, 5]);
+    </script>
+  </body>
+</html>

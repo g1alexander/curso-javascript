@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 22</h1>
+    <script>
+      /*Programa una función que dado un 
+      array devuelva el número mas alto y 
+      el más bajo de dicho array, pe. 
+      miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].*/
+
+      let ordenar = [],
+        mayor = [],
+        menor = [];
+      const comparar = (a, b) => a - b;
+
+      const mayor_menor = (array = undefined) => {
+        if (array === undefined) return console.warn("no puede estar vacio");
+        if (!(array instanceof Array))
+          return console.error("debes ingresar un array");
+
+        ordenar = array.sort(comparar);
+        mayor = ordenar.splice(-1, 1);
+        menor = ordenar.splice(0, 1);
+        console.log(mayor.concat(menor));
+      };
+
+      mayor_menor([1, 4, 5, 99, -60]);
+    </script>
+  </body>
+</html>

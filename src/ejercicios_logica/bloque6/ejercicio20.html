@@ -17,6 +17,10 @@
       /*Programa una función que valide que un 
       texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") 
       devolverá verdadero.*/
+
+      // /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i
+      // expresion que usa el profe para validar sus emails
+
       let valEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z](?:[a-z]*[a-z])?\.)+[a-z](?:[a-z]*[a-z])?$/;
 
       const email = (texto = undefined) => {
@@ -28,7 +32,7 @@
         console.log(`tu email ${texto} es correcto`);
       };
 
-      email("jonmircha@gmail.es");
+      email("jonmircha@gmail.mx");
     </script>
   </body>
 </html>
