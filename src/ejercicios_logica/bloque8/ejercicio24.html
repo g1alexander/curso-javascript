@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 24</h1>
+    <script>
+      /*Programa una función que dado un arreglo
+      de números devuelva un objeto con dos arreglos,
+      el primero tendrá los numeros ordenados en forma ascendente
+      y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6])
+      devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.*/
+
+      const ascDesc = (array = undefined) => {
+        if (array === undefined) return console.warn("ingresa un array");
+        if (!(array instanceof Array))
+          return console.error("debes ingresar un array");
+        if (array.length === 0)
+          return console.error("el array no puede estar vacio");
+
+        for (const elem of array) {
+          if (!(typeof elem === "number"))
+            return console.error("deben ser numeros");
+        }
+
+        const hola = array.sort((a, b) => b - a);
+        console.log(hola);
+        const hola1 = array.sort((a, b) => a - b);
+        console.log(hola1);
+        //
+        // esta parte no la hice. "map" era la solucion
+        console.info({
+          asc: array.map((elem) => elem).sort((a, b) => a - b),
+          desc: array.map((elem) => elem).sort((a, b) => b - a),
+        });
+      };
+
+      ascDesc([7, 5, 7, 8, 6]);
+    </script>
+  </body>
+</html>

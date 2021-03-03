@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ejercicio 26</h1>
+    <script>
+      /*Programa una función que dado 
+      un arreglo de números obtenga el promedio, 
+      pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.*/
+      const promedio = (array = undefined) => {
+        if (array === undefined) return console.warn("ingresa un array");
+        if (!(array instanceof Array))
+          return console.error("debes ingresar un array");
+        if (array.length === 0)
+          return console.error("el array no puede estar vacio");
+
+        for (const elem of array) {
+          if (!(typeof elem === "number"))
+            return console.error("deben ser numeros");
+        }
+        let div = array.length;
+        let suma = 0;
+        array.forEach((elem) => {
+          suma += elem;
+        });
+        console.log(suma / div);
+      };
+
+      promedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+    </script>
+  </body>
+</html>
