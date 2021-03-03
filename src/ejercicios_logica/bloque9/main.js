@@ -69,6 +69,8 @@ const datosPelicula = (...datos) => {
   /* ------------------------------------ */
   /* validaciones de los datos que llegan */
   /* ------------------------------------ */
+  if (datos.length > 7)
+    return console.warn("solo son 7 datos que debes ingresar");
   if (datos.length === 0) return console.warn("debes poner los datos");
   if (typeof datos[0] !== "string")
     return console.error("el primer valor debe ser un string");
