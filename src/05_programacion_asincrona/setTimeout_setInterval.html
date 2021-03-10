@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>setTimeout, setInterval</h1>
+    <script>
+      // se ejecuta una sola vez despues de pasado 2 seg
+      let set_Timeout = setTimeout(() => {
+        console.log("hola");
+      }, 2000);
+
+      clearTimeout(set_Timeout); //detiene la ejecucion de del setTimeout
+
+      //se ejecuta cada 1 segundo
+      let set_Interval = setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+
+      clearInterval(set_Interval); //detiene la ejecucion de del setInterval
+
+      /*Nota: para que podamos usar "clearInterval" debemos primero 
+        pasarle una variable 
+      */
+    </script>
+  </body>
+</html>

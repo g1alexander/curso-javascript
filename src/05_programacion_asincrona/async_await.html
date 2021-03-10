@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Async Await</h1>
+    <script>
+      function cuadrado(value) {
+        if (typeof value !== "number") {
+          return Promise.reject(`el valor ${value} no es un entero`);
+        }
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve({
+              value,
+              result: value * value,
+            });
+          }, 0 | (Math.random() * 1000));
+        });
+      }
+
+      const funcionAsincrona = async () => {
+        try {
+          let obj = await cuadrado(0);
+          console.log(obj);
+          obj = await cuadrado(1);
+          console.log(obj);
+          obj = await cuadrado(2);
+          console.log(obj);
+          obj = await cuadrado("3");
+          console.log(obj);
+          obj = await cuadrado(4);
+          console.log(obj);
+          obj = await cuadrado(5);
+          console.log(obj);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      funcionAsincrona();
+    </script>
+  </body>
+</html>
