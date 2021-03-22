@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Proxies</h1>
+    <script>
+      const persona = {
+        nombre: "",
+        apellido: "",
+        edad: 0,
+      };
+
+      const manejador = {
+        set(obj, prop, value) {
+          if (Object.keys(obj).indexOf(prop) === -1) {
+            return console.error(
+              `la propiedad ${prop} no esta asignada en el objeto original`
+            );
+          }
+          if (
+            (prop === "nombre" || prop === "apellido") &&
+            !/^[A-Za-zÑñÁáÉéÍíÓóÚÜü\s]+$/g.test(value)
+          ) {
+            return console.error(`la ${prop} solo acepta letras y espacios`);
+          }
+          if (prop === "edad" && (!/^[0-9]+$/g.test(value) || value < 0)) {
+            return console.error(
+              `la propiedad ${prop} solo admite numeros mayores a cero`
+            );
+          }
+          //hay que validar antes de asignarle el valor
+          obj[prop] = value;
+        },
+      };
+
+      const alex = new Proxy(persona, manejador);
+      alex.nombre = "alexander";
+      alex.apellido = "granados";
+      alex.edad = 30;
+      alex.twitter = "@g1_alexander";
+      console.log(alex);
+    </script>
+  </body>
+</html>

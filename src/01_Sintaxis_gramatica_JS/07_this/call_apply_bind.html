@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>call apply bind</h1>
+    <script>
+      this.lugar = "contexto global";
+      console.log(this.lugar);
+
+      function saludar(nombre, saludo) {
+        console.log(`${nombre} ${saludo} ${this.lugar}`);
+      }
+      saludar("jojo", "naa");
+
+      const obj = {
+        lugar: "contexto objeto",
+      };
+
+      /*estos metodos nos sirven para manejar el contexto
+       */
+      saludar.call(obj, "alex", "hola");
+      saludar.call(null, "alex", "hola"); //contexto global
+      saludar.call(this, "alex", "hola"); //contexto en que se encuentre
+      saludar.apply(obj, ["granados", "adios"]);
+      saludar.apply(null, ["granados", "adios"]); //contexto global
+      saludar.apply(this, ["granados", "adios"]); //contexto en que se encuentre
+
+      const persona = {
+        nombre: "alex",
+        saludar: function () {
+          console.log(`hola ${this.nombre}`);
+        },
+      };
+
+      this.nombre = "window";
+      persona.saludar();
+
+      const otraPerson = {
+        // saludar: persona.saludar.bind(this), enlaza al objeto global
+        saludar: persona.saludar.bind(persona),
+      };
+
+      otraPerson.saludar();
+    </script>
+  </body>
+</html>

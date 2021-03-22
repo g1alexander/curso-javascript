@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>WeakSets</h1>
+    <script>
+      // no se puede declarar un WeakSet asi
+      // const set = new WeakSet([1, 2, 3, 4, 5, 5, 2, 3, true, false, false]);
+      const ws = new WeakSet();
+      let valor1 = { valor1: 1 };
+      let valor2 = { valor2: 2 };
+      let valor3 = { valor3: 3 };
+      ws.add(valor1);
+      ws.add(valor2);
+
+      console.log(ws);
+      console.log(ws.has(valor1));
+      console.log(ws.has(valor3));
+      ws.delete(valor2);
+      console.log(ws);
+
+      ws.add(valor2);
+      ws.add(valor3);
+      console.log(ws);
+
+      setInterval(() => console.log(ws), 1000);
+      setTimeout(() => {
+        valor1 = null;
+        valor2 = null;
+        valor3 = null;
+      }, 5000);
+    </script>
+  </body>
+</html>

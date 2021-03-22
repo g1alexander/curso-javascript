@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Web Api's</h1>
+    <h2>DOM: Document object model</h2>
+    <h2>BOM: brower object model</h2>
+    <h2>CSSOM: css object model</h2>
+    <ul>
+      <li>eventos</li>
+      <li>forms</li>
+      <li>AJAX - FETCH</li>
+      <li>history</li>
+      <li>web storage</li>
+      <li>geolacation</li>
+      <li>indexed DB</li>
+      <li>canvas</li>
+      <li>MatchMedia</li>
+      <li>drag & drop</li>
+      <li>etc...</li>
+    </ul>
+    <script>
+      console.log(window);
+      console.log(document);
+
+      let texto = "Hola mundo Alex, esta en la clase 60!";
+      const hablar = (text) => {
+        let ut = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(ut);
+      };
+
+      hablar(texto);
+    </script>
+  </body>
+</html>

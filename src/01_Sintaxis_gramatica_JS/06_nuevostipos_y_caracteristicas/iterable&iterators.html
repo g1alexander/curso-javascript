@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Iterables & Iterators</h1>
+    <script>
+      const iterable = [1, 2, 3, 4, 5, 6];
+      // const iterable = "hola mundo";
+      // const iterable = new Set([1, 2, 3, 4, 5, 5, 2, 3, true, false, false]);
+      // const iterable = new Map([["nombre", "hola"]]);
+
+      const iterador = iterable[Symbol.iterator]();
+      console.log(iterable);
+      console.log(iterador);
+
+      /* console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      console.log(iterador.next());
+      */
+
+      let next = iterador.next();
+
+      while (!next.done) {
+        console.log(next.value);
+        //si no se le reasigna de nuevo el next dara un ciclo infinito
+        next = iterador.next();
+      }
+    </script>
+  </body>
+</html>

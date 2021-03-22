@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JSON</h1>
+    <script>
+      const datos = {
+        cadena: "alex",
+        numero: 20,
+        booleano: true,
+        array: ["hola", "mundo"],
+        objecto: {
+          twitter: "@alexander",
+          joo: "jojo",
+        },
+        nulo: null,
+      };
+      console.log(datos);
+      console.log(JSON);
+      console.log("{}");
+      console.log(JSON.parse("{}"));
+      console.log(JSON.parse("[1,2,3,4]"));
+      console.log(JSON.parse("22"));
+      console.log(JSON.parse("true"));
+      console.log(JSON.parse("false"));
+      console.log(JSON.parse("null"));
+      // console.log(JSON.parse("undefined")); marca error - no es un formato valido
+
+      console.log(JSON.stringify(datos));
+      console.log(
+        JSON.parse(
+          `{"cadena":"alex","numero":20,"booleano":true,"array":["hola","mundo"],"objecto":{"twitter":"@alexander","joo":"jojo"},"nulo":null}`
+        )
+      );
+    </script>
+  </body>
+</html>

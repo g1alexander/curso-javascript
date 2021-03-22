@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>WeakMaps</h1>
+    <script>
+      /* no se puede declarar un WeakMap asi
+      const mapa2 = new WeakMap([
+        ["nombre", "hola"],
+        ["apellido", "jojoj"],
+        [null, "nulo"],
+        [false, "falso"],
+        [{}, {}],
+      ]); */
+      const ws = new WeakMap();
+      let llave1 = {};
+      let llave2 = {};
+      let llave3 = {};
+      ws.set(llave1, 1);
+      ws.set(llave2, 2);
+
+      console.log(ws);
+      console.log(ws.has(llave1));
+      console.log(ws.has(llave3));
+      ws.delete(llave2);
+      console.log(ws);
+
+      ws.set(llave2, 2);
+      ws.set(llave3, 3);
+      console.log(ws);
+
+      console.log(ws.get(llave1));
+      console.log(ws.get(llave2));
+
+      setInterval(() => console.log(ws), 1000);
+      setTimeout(() => {
+        llave1 = null;
+        llave2 = null;
+        llave3 = null;
+      }, 5000);
+    </script>
+  </body>
+</html>

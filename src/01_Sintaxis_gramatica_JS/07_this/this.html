@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>this</h1>
+    <script>
+      console.log(this);
+      console.log(window);
+      console.log(this === window);
+
+      this.nombre = "contexto global";
+
+      function imprimir() {
+        console.log(this.nombre);
+      }
+      imprimir();
+
+      const obj = {
+        nombre: "contexto objeto",
+        imprimir: function () {
+          console.log(this.nombre);
+        },
+      };
+      obj.imprimir();
+
+      const obj2 = {
+        nombre: "contexto objeto",
+        imprimir,
+      };
+      obj2.imprimir();
+
+      const obj3 = {
+        nombre: "contexto objeto",
+        imprimir: () => {
+          console.log(this.nombre);
+        },
+      };
+      obj3.imprimir();
+
+      function persona(nombre) {
+        /*   metodo 1      
+        this.nombre = nombre;
+        return console.log(this.nombre);
+        */
+        /*  problema - solucion abajo moderna y vieja 
+        this.nombre = nombre;
+        return function () {
+          console.log(this.nombre);//contexto global
+        };
+        */
+        /*  solucion moderna
+        this.nombre = nombre;
+        return () => console.log(this.nombre);
+        */
+        //solucion vieja
+        const that = this;
+        that.nombre = nombre;
+        return function () {
+          console.log(that.nombre, 11);
+        };
+      }
+
+      const alex = new persona("alex");
+      alex();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "cadena": "alex",
+  "numero": 20,
+  "booleano": true,
+  "array": ["hola", "mundo"],
+  "objecto": {
+    "twitter": "@alexander",
+    "joo": "jojo"
+  },
+  "nulo": null
+}

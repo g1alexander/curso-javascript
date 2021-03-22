@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Set</h1>
+    <script>
+      const set = new Set([1, 2, 3, 4, 5, 5, 2, 3, true, false, false]);
+      console.log(set);
+
+      const set2 = new Set();
+      set2.add(1);
+      set2.add(2);
+      set2.add(2);
+      set2.add(3);
+      set2.add(true);
+      set2.add(true);
+      set2.add(false);
+      console.log(set2);
+      console.log(set2.size); //equivalente a .lenght
+
+      console.log("set1");
+      for (const i of set) {
+        console.log(i);
+      }
+      console.log("set2");
+      set2.forEach((i) => console.log(i));
+
+      console.log("***************");
+      let arr = Array.from(set);
+      console.log(arr);
+      console.log(arr[0]);
+      console.log(arr.length);
+
+      set.delete(true);
+      console.log(set);
+      console.log(set.has(true));
+      set2.clear();
+      console.log(set2);
+    </script>
+  </body>
+</html>

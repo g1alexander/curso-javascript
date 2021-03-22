@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #a3a3a3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Maps</h1>
+    <script>
+      const mapa = new Map();
+      mapa.set("nombre", "alex");
+      mapa.set("apellido", "granados");
+      mapa.set("edad", 20);
+
+      console.log(mapa);
+      console.log(mapa.size); //cuantos valores hay
+      console.log(mapa.has("correo")); //false
+      console.log(mapa.has("nombre")); //true
+      console.log(mapa.get("apellido"));
+      mapa.set("nombre", "alexander granados");
+      mapa.delete("apellido");
+      console.log(mapa);
+
+      // cosas raras de los maps
+      mapa.set(19, "19");
+      mapa.set(null, "nulo");
+      mapa.set({}, {});
+      mapa.set(undefined, "indefinido");
+      console.log(mapa);
+
+      //map se puede iterar
+      for (let [key, value] of mapa) {
+        console.log(`key: ${key}, value ${value}`);
+      }
+
+      //destructuracion del map
+      let keyMapa = [...mapa.keys()];
+      console.log(keyMapa);
+      let valueMapa = [...mapa.values()];
+      console.log(valueMapa);
+
+      //otras formas de declarar un map
+      const mapa2 = new Map([
+        ["nombre", "hola"],
+        ["apellido", "jojoj"],
+        [null, "nulo"],
+        [false, "falso"],
+        [{}, {}],
+      ]);
+
+      console.log(mapa2);
+    </script>
+  </body>
+</html>
