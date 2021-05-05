@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD API REST AJAX</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 3rem;
+      }
+      .none {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <h1>CRUD API REST AJAX</h1>
@@ -12,12 +21,18 @@
       <article>
         <h1 class="crud-title">Agregar santo</h1>
         <form class="crud-form">
-          <input type="text" name="nombre" placeholder="Nombre" />
+          <input type="text" name="nombre" placeholder="Nombre" required />
           <br /><br />
-          <input type="text" name="constellation" placeholder="Constelacion" />
+          <input
+            type="text"
+            name="constellation"
+            placeholder="Constelacion"
+            required
+          />
+          <input type="hidden" name="action" data-id="" />
           <br /><br />
+
           <input type="submit" value="Enviar" />
-          <input type="hidden" name="action" />
         </form>
       </article>
       <article>
@@ -25,6 +40,7 @@
         <table class="crud-table">
           <thead>
             <tr>
+              <th class="none">Id</th>
               <th>Nombre</th>
               <th>Constelacion</th>
               <th>Actiones</th>
@@ -32,10 +48,13 @@
           </thead>
           <tbody></tbody>
         </table>
+
+        <h1 class="error none"></h1>
       </article>
     </section>
     <template id="crud-template">
       <tr>
+        <td class="id none"></td>
         <td class="name"></td>
         <td class="constellation"></td>
         <td>
@@ -45,12 +64,6 @@
       </tr>
     </template>
 
-    <script>
-      const d = document,
-        $title = d.querySelector(".crud-title"),
-        $form = d.querySelector(".crud-form"),
-        $table = d.querySelector(".crud-table"),
-        $template = d.getElementById("crud-template");
-    </script>
+    <script src="js/crud_XMLHttpRequest.js"></script>
   </body>
 </html>
