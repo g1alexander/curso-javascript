@@ -1,4 +1,4 @@
-## API REST: CRUD con AJAX (1/2)
+## API REST: CRUD con AJAX (1/2)(2/2)
 
 - La forma correcta de hacer las peticiones es crear una funcion que almacene la logica de las peticiones **AJAX** si involucrar nada acerca del **DOM** la logica del **DOM** iria dentro de los parametros de la funcion creada
 
@@ -122,3 +122,10 @@ d.addEventListener("click", (e) => {
   }
 });
 ```
+
+---
+
+## API REST: CRUD con Fetch (1/2)(2/2)
+
+- el metodo getAll() lo pude resolver muy bien :)
+- en el guardado y editado de datos falta el location.reload()
