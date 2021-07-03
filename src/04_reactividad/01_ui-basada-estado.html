@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI basada en el estado</title>
+  </head>
+  <body>
+    <h1>UI basada en el estado</h1>
+    <form id="form-todo">
+      <input type="text" id="todo-item" />
+      <input type="submit" value="guardar" />
+    </form>
+    <ul id="todos"></ul>
+    <script>
+      const d = document;
+
+      // Estado UI
+      const state = {
+        todos: [],
+      };
+
+      // Template UI
+      const template = () => {
+        if (state.todos.length < 1) {
+          return /*html*/ `<p>No hay listas por completar</p>`;
+        }
+        let todos = state.todos
+          .map((item) => /*html*/ `<li>${item}</li>`)
+          .join("");
+        return todos;
+      };
+
+      // Render UI
+      const render = () => {
+        console.log(state);
+        const $todos = d.getElementById("todos");
+        if (!$todos) return;
+
+        $todos.innerHTML = template();
+      };
+
+      d.addEventListener("DOMContentLoaded", render);
+
+      d.addEventListener("submit", (e) => {
+        if (!e.target.matches("#form-todo")) return false;
+
+        e.preventDefault();
+        $todo = d.getElementById("todo-item");
+
+        //actualizar el state y la UI
+        state.todos.push($todo.value);
+        render();
+
+        $todo.value = "";
+        $todo.focus();
+      });
+    </script>
+  </body>
+</html>

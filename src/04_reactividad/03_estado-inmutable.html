@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estado Inmutables</title>
+  </head>
+  <body>
+    <h1>Estado Inmutables</h1>
+    <form id="form-todo">
+      <input type="text" id="todo-item" />
+      <input type="submit" value="guardar" />
+    </form>
+    <ul id="todos"></ul>
+    <script>
+      const d = document;
+
+      // Estado UI
+      const state = {
+        todos: [],
+      };
+
+      // Template UI
+      const template = () => {
+        if (state.todos.length < 1) {
+          return /*html*/ `<p>No hay listas por completar</p>`;
+        }
+        let todos = state.todos
+          .map((item) => /*html*/ `<li>${item}</li>`)
+          .join("");
+        return todos;
+      };
+
+      // Render UI
+      const render = () => {
+        // console.log(state);
+        const $todos = d.getElementById("todos");
+        if (!$todos) return;
+
+        $todos.innerHTML = template();
+      };
+
+      // actualizar el State de forma reactiva
+      const setState = (obj) => {
+        for (const key in obj) {
+          if (state.hasOwnProperty(key)) {
+            state[key] = obj[key];
+          }
+        }
+        render();
+      };
+
+      d.addEventListener("DOMContentLoaded", render);
+
+      // establecer valores por defecto
+      setState({
+        todos: ["tarea 1", "tarea 2", "tarea 3", "tarea 4"],
+        nombre: "ashdiha",
+      });
+      // estado inmutable
+      const getState = () => JSON.parse(JSON.stringify(state));
+
+      const items = getState();
+      items.todos.push("oea"); // no se agrega al state global
+      console.log("estado inmutable", items);
+
+      // -----
+
+      d.addEventListener("submit", (e) => {
+        if (!e.target.matches("#form-todo")) return false;
+
+        e.preventDefault();
+        $todo = d.getElementById("todo-item");
+
+        //actualizar el state de forma reactiva
+        const data = getState();
+        data.todos.push($todo.value);
+        setState({
+          todos: data.todos,
+        });
+
+        // limpiar input
+        $todo.value = "";
+        $todo.focus();
+      });
+    </script>
+  </body>
+</html>

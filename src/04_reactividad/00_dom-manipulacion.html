@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulacion manual del DOM</title>
+  </head>
+  <body>
+    <form id="form-todo">
+      <input type="text" id="todo-item" />
+      <input type="submit" value="guardar" />
+    </form>
+    <ul id="todos"></ul>
+    <script>
+      const d = document,
+        $item = d.getElementById("todo-item"),
+        $items = d.getElementById("todos");
+
+      d.addEventListener("submit", (e) => {
+        if (!e.target.matches("#form-todo")) return false;
+
+        e.preventDefault();
+        let $li = d.createElement("li");
+        $li.textContent = $item.value;
+        $items.appendChild($li);
+
+        $item.value = "";
+        $item.focus();
+      });
+    </script>
+  </body>
+</html>
